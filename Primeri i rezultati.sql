@@ -180,7 +180,7 @@ INSERT 0 100000000
 Query returned successfully in 1 min 24 secs. -- sa particijama
 
 
-
+-- select upiti
 
 select * from sales_big where sale_date >= '2022-02-03' and sale_date <= '2022-06-06';
 
@@ -249,4 +249,23 @@ Query complete 00:00:02.482
 "  Options: Inlining true, Optimization true, Expressions true, Deforming true"
 "  Timing: Generation 0.914 ms, Inlining 1.853 ms, Optimization 41.528 ms, Emission 27.897 ms, Total 72.193 ms"
 "Execution Time: 4406.372 ms"
+
+
+
+-- brisanje podataka
+
+
+delete from sales where sale_date >= '01-01-2022' AND sale_date < '02-01-2022';
+
+DELETE 8587077
+
+Query returned successfully in 18 secs 688 msec. -- bez particija
+
+DELETE 8582014
+
+Query returned successfully in 3 secs 709 msec. -- sa particijama
+
+DROP TABLE
+
+Query returned successfully in 55 msec. -- brisanje cele particije (tabele)
 
